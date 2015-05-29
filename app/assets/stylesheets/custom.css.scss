@@ -1,0 +1,22 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+#logo{
+  color: #5BBC2E;
+  font-size: 25px;
+  &:hover{
+    color: purple;
+  }
+}
+
+.navbar ul li a {
+  color: #666;
+  &:hover{
+    color: #5BBC2E;
+    background-color:white;
+  }
+}
+
+#footer{
+  margin-top:30px;
+}
