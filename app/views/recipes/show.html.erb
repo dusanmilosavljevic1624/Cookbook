@@ -1,0 +1,6 @@
+<h1 class="text-center">Recipe by: <%= @recipe.chef.chefname%></h1>
+<%= render @recipe %>
+
+<h5><%= link_to "Back", recipes_path, class: "btn btn-success btn-md" %>
+    <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-success btn-md pull-right" %>
+</h5>
