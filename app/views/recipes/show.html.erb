@@ -1,6 +1,27 @@
-<h1 class="text-center">Recipe by: <%= @recipe.chef.chefname%></h1>
-<%= render @recipe %>
+<h1 class="text-center"><%= render 'shared/title', title: @recipe.name %></h1>
 
-<h5><%= link_to "Back", recipes_path, class: "btn btn-success btn-md" %>
-    <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-success btn-md pull-right" %>
-</h5>
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <%= gravatar_for @recipe.chef, size: 200 %>
+    <p>
+      <h5>Brought to you by: <%= @recipe.chef.chefname %></h5>
+    </p>
+  </div>
+
+  <div class="col-md-8">
+    <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn btn-success pull-right" %>
+    <h3><%= @recipe.summary %></h3>
+    <div class="show_recipe" style="margin-bottom: 15px;">
+      <%= image_tag(@recipe.picture.url, size: "400x200", class: "gravatar") if @recipe.picture? %>
+    </div>
+    <div class="well">
+      <p>
+        <Strong>Steps:</Strong>
+      </p>
+      <%= simple_format(@recipe.description) %>
+    </div>
+  </div>
+</div>
+
+<h5><%= link_to "Back", recipes_path, class: "btn btn-success btn-md text-center" %>
+    </h5>

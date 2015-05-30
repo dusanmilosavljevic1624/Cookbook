@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
       flash[:success] = "Recipe was update successfully"
       redirect_to recipe_path(@recipe)
     else
-      flash.now[:error] = "There was an error"
+      #flash.now[:warning] = "There was an error"
       render :edit
     end
   end
@@ -42,6 +42,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :summary, :description)
+    params.require(:recipe).permit(:name, :summary, :description, :picture)
   end
 end
