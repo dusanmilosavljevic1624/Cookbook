@@ -58,3 +58,16 @@ span.picture{
 .show_recipe{
   margin:10px 10px 10px 10px;
 }
+
+.col-xs-offset-right-1 {
+  margin-right: 8.33333333%;
+}
+
+#logged_in_as a{
+  text-decoration: none;
+  cursor: default;
+}
+
+#logged_in_as > a:hover{
+  color: #666;
+}

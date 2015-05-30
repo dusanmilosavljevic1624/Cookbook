@@ -6,4 +6,12 @@ Rails.application.routes.draw do
       post :like
     end
   end
+
+  resources :chefs, except: [:new]
+
+  get '/register' => 'chefs#new'
+
+  get '/login' => 'sessions#new'
+  delete '/logout' => 'sessions#destroy'
+  post '/login' => 'sessions#create'
 end

@@ -1,10 +1,13 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:edit, :update, :show, :like]
+  before_action :require_user, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update]
+
   def index
     @recipes = Recipe.paginate(page: params[:page], per_page: 4)
   end
 
   def show
-    @recipe = Recipe.find_by(id: params[:id])
   end
 
   def new
@@ -13,7 +16,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.chef = Chef.find(2)
+    @recipe.chef = current_user
     if @recipe.save
       flash[:success] = "You have successfully added a new recipe"
       redirect_to recipe_path(@recipe)
@@ -24,29 +27,25 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
       flash[:success] = "Recipe was updated successfully"
       redirect_to recipe_path(@recipe)
     else
-      #flash.now[:warning] = "There was an error"
       render :edit
     end
   end
 
   def like
-    @recipe = Recipe.find(params[:id])
-    @like = Like.create(like: params[:like], chef: Chef.first, recipe: @recipe)
+    @like = Like.create(like: params[:like], chef: current_user, recipe: @recipe)
     if @like.valid?
       flash[:success] = "Your selection was successful"
       redirect_to :back
     else
-      flash[:warning] = "You can only like an article once"
-      render :index
+      flash[:danger] = "You can only like an article once"
+      redirect_to :back
     end
 
   end
@@ -57,4 +56,16 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:name, :summary, :description, :picture)
   end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @recipe.chef
+      flash[:danger] = "You can only edit your own recipes."
+      redirect_to recipes_path
+    end
+  end
+
 end

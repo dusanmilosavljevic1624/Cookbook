@@ -2,40 +2,32 @@
   <h1>Welcome to the largest online cook-book</h1>
   <h3>Browse through recipes and create your own</h3>
   <div class="col-md-6 col-md-offset-3">
-  <%= link_to "Sign Up","",class: "btn btn-success btn-lg btn-block btn-block-xs" %>
+  <%= link_to "Sign Up", register_path,class: "btn btn-success btn-lg btn-block btn-block-xs" %>
   </div>
   <br>
 </div>
 
 
 <div class="row text-center">
-  <div class="col-md-4">
+
+  <div class="col-md-5 col-md-offset-1">
     <h3>
       View recipes as Guest User
     </h3>
     <h5>Browse and view recipes as guest and Sign Up later</h5>
     <p class="text-center">
-        <%= link_to "Browse Recipes", recipes_path, class: "btn btn-warning text-center btn-center" %>
+        <%= link_to "Browse Recipes as Guest", recipes_path, class: "btn btn-warning text-center btn-center" %>
     </p>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-5 col-xs-offset-right-1 ">
     <h3>
-      View recipes as Guest User
+      Log in to your account
     </h3>
-    <h5>Browse and view recipes as guest and Sign Up later</h5>
+    <h5>Add recipes and like others</h5>
     <p>
-      <%= link_to "Browse Recipes", "#", class: "btn btn-warning" %>
+      <%= link_to "Log in to your account", login_path, class: "btn btn-warning" %>
     </p>
   </div>
 
-  <div class="col-md-4">
-    <h3>
-      View recipes as Guest User
-    </h3>
-    <h5>Browse and view recipes as guest and Sign Up later</h5>
-    <p>
-      <%= link_to "Browse Recipes", "#", class: "btn btn-warning btn-center" %>
-    </p>
-  </div>
 </div>
