@@ -17,6 +17,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'fog', '1.23.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
