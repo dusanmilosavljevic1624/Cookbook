@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :recipes do
+    resources :reviews, only: [:new, :create]
     member do
       post :like
     end
@@ -17,5 +18,8 @@ Rails.application.routes.draw do
 
   resources :styles, only: [:new, :create, :show]
   resources :ingredients, only: [:new, :create, :show]
+
+
+
 
 end

@@ -1,0 +1,7 @@
+<h4><%= link_to @review.chef.chefname, chef_path(@review.chef.id), id: 'review_name' %>
+  <span class="small"><%= time_ago_in_words(@review.created_at)%> ago</span>
+</h4>
+
+<p class="well">
+  <%= @review.body %>
+</p>

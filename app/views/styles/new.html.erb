@@ -1,4 +1,4 @@
-<%= render 'shared/title', title: "Create new style" %>
+<%= render 'shared/title', title: "Add new cuisine" %>
 <%= render 'shared/errors', obj: @style %>
 
 <div class="row">
@@ -6,7 +6,7 @@
     <%= form_for @style do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control" %><br>
-        <%= f.submit("Create style", class: "btn btn-danger") %>
+        <%= f.submit("Add Cuisine", class: "btn btn-danger") %>
     <% end %>
 
   </div>

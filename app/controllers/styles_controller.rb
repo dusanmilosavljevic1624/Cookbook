@@ -8,7 +8,7 @@ class StylesController < ApplicationController
   def create
     @style = Style.new(style_params)
     if @style.save
-      flash[:success] = "New style added."
+      flash[:success] = "New cuisine added."
       redirect_to recipes_path
     else
       render :new

@@ -1,6 +1,8 @@
 class Chef < ActiveRecord::Base
   has_many :recipes
   has_many :likes
+  has_many :reviews
+
   before_save {self.email = email.downcase}
   validates :chefname, presence: true, length: {minimum: 5, maximum: 20},
                       format: {with: /\A[a-zA-Z0-9]+\z/}

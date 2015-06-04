@@ -41,5 +41,40 @@
   </div>
 </div>
 
-<h5><%= link_to "Back", recipes_path, class: "btn btn-success btn-md text-center" %>
-    </h5>
+<h5><%= link_to "Back", recipes_path, class: "btn btn-success btn-md text-center" %></h5>
+
+
+<div class="row">
+  <div class="col-md-8">
+    <h3 class="text-center"><%= link_to "Reviews", '#', id: 'reviews' %></h3>
+  </div>
+</div>
+
+<div class="row" id="review_row">
+<div class="col-md-8" id="reviews_fields">
+
+
+<% @recipe.reviews.each do |review| %>
+
+      <h4><%= link_to review.chef.chefname, chef_path(review.chef.id), id: 'review_name' %>
+        <span class="small"><%= time_ago_in_words(review.created_at)%> ago</span>
+      </h4>
+
+      <p class="well">
+        <%= review.body %>
+      </p>
+    <% end %>
+</div>
+
+  <div class="row" id="review_form">
+    <div class="col-md-8">
+      <%= render 'reviews/form' %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

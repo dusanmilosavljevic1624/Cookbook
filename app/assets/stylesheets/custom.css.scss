@@ -71,3 +71,16 @@ span.picture{
 #logged_in_as > a:hover{
   color: #666;
 }
+
+#review_name {
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+
+#reviews_fields{
+  display: none;
+}
+
+#review_form{
+  display: none;
+}
