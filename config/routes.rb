@@ -7,11 +7,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :chefs, except: [:new]
+  resources :chefs, except: [:new, :destroy]
 
   get '/register' => 'chefs#new'
 
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
   post '/login' => 'sessions#create'
+
+  resources :styles, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :show]
+
 end

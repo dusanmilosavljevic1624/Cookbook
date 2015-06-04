@@ -1,7 +1,10 @@
+<%= render 'shared/title', title: "Recipes for: " + @style.name + " food" %>
+
+<% @style.recipes.each do |recipe| %>
 <div class="row" style="padding-bottom: 30px;">
   <div class="col-md-2">
     <section class="chef_info center">
-        <%= link_to gravatar_for(recipe.chef, size:100), chef_path(recipe.chef) %>
+      <%= link_to gravatar_for(recipe.chef, size:100), chef_path(recipe.chef) %>
       <h5>Chef Name: <%= recipe.chef.chefname %></h5>
     </section>
   </div>
@@ -13,17 +16,8 @@
     <p>
       <%= recipe.summary %>
     </p>
-    <p>
-      <% if !recipe.styles.empty? %>
-        Styles: <%= render recipe.styles %>
-      <% end %>
-    </p>
-
-    <p>
-      <% if !recipe.ingredients.empty? %>
-        Ingredients:  <%=render recipe.ingredients %>
-      <% end %>
-    </p>
+    <p>Styles: <%= render recipe.styles %></p>
+    <p>Ingredients: <%= render recipe.ingredients %></p>
 
 
     <div class="pull-right">
@@ -35,9 +29,6 @@
           <i class="glyphicon glyphicon-thumbs-down"></i>&nbsp; <%= recipe.thumbs_down_total %>
       <% end %>
     </div>
-    <% if params[:action] == 'show' %>
-        <%= recipe.description %>
-        <% end %>
     <p>
       <span class="quiet"><small>Created: <%= time_ago_in_words(recipe.created_at) %> ago</small></span><br>
       <span class="quiet"><small>Updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
@@ -51,3 +42,6 @@
 </div>
 
 <hr style="margin-top:-10px;"/>
+    <% end %>
+
+<%= will_paginate @recipes %>
