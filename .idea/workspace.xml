@@ -112,8 +112,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/recipes/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80982566" vertical-offset="134" max-vertical-offset="765">
-              <caret line="43" column="61" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.12044374" vertical-offset="134" max-vertical-offset="765">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -1125,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recipes/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80982566" vertical-offset="134" max-vertical-offset="765">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.12044374" vertical-offset="134" max-vertical-offset="765">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>
