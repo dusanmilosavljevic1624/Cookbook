@@ -1,3 +1,5 @@
+<% if !logged_in? %>
+
 <div class="jumbotron text-center">
   <h1>Welcome to the largest online cook-book</h1>
   <h3>Browse through recipes and create your own</h3>
@@ -31,3 +33,62 @@
   </div>
 
 </div>
+
+<% else %>
+    <div class="container-fluid" style="background-color: #F1925C; border-radius: 10px;">
+        <h1 class="logged_in_h1 text-center">How it Works</h1>
+      <h3 class="white text-center" style="margin-top: -15px; padding-bottom: 20px;">As a registered chef, you can do the following.</h3>
+
+      <div class="container-fluid">
+        <div class="row">
+
+
+          <div class="col-md-4 white logged_in_col text-center">
+            <%= link_to "Crete new recipe", new_recipe_path, class: 'btn btn-primary btn-block'%>
+          </div>
+
+          <div class="col-md-4 white logged_in_col text-center">
+             <%= link_to "Add Cuisines", new_style_path, class: 'btn btn-primary btn-block'%>
+            </ul>
+          </div>
+
+          <div class="col-md-4 white logged_in_col text-center" style="width: 31%;  ">
+            <%= link_to "Add Ingredients", new_ingredient_path, class: 'btn btn-primary btn-block'%>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <h1 class="white text-center">
+              Browse the page and:
+              <hr>
+            </h1>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <h1 class="white text-center"><span class="glyphicon glyphicon-thumbs-up center"></span><br>Like other recipes</h1>
+          </div>
+
+          <div class="col-md-4">
+            <h1 class="white text-center"><span class="glyphicon glyphicon-comment"></span><br>Leave reviews</h1>
+          </div>
+
+          <div class="col-md-4">
+            <h1 class="white text-center"><span class="glyphicon glyphicon-edit"></span><br>Edit your existing recipes </h1>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+<% end %>

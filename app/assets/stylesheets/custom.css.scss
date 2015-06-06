@@ -1,4 +1,4 @@
-@import 'bootstrap-sprockets';
+@import "bootstrap-sprockets";
 @import 'bootstrap';
 
 #logo{
@@ -83,4 +83,39 @@ span.picture{
 
 #review_form{
   display: none;
+}
+
+.logged_in_h1{
+  font-size: 2.5em;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
+.white{
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.logged_in_col{
+  background-color: #F1925C;
+  padding-right: 10px;
+  margin-top: 20px;
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-bottom: 30px;
+}
+
+.white ul li{
+  margin-top: 8px;
+
+}
+
+#githublogo{
+  margin-top: -10px;
+  margin-left: auto;
+  margin-right: auto;
 }
