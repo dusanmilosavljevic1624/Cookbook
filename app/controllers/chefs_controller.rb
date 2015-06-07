@@ -1,7 +1,7 @@
 class ChefsController < ApplicationController
   before_action :set_chef, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update]
-
+  before_action :require_admin, only: :destroy
 
   #Kreiranje nove varijable instance prilikom posete formi za pravljenje novog korisnika
   def new
@@ -43,6 +43,12 @@ class ChefsController < ApplicationController
     @chefs = Chef.paginate(page: params[:page], per_page:3)
   end
 
+  def destroy
+    Chef.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to :back
+  end
+
   private
 
   #Validacija parametara forme zbog sprecavanja SQL injectiona
@@ -59,5 +65,9 @@ class ChefsController < ApplicationController
       flash[:danger] = "You can only edit your own profile."
       redirect_to root_url
     end
+  end
+
+  def require_admin
+    redirect_to root_url and flash[:danger] = "You don't have permission to do that" unless current_user.admin?
   end
 end

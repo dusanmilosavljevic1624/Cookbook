@@ -1,3 +1,28 @@
+<% if current_user.admin? %>
+    <h1>Users</h1>
+    <div class="container">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Chefname</th>
+          <th>Email</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% Chef.all.each do |chef| %>
+        <tr>
+          <td><%= chef.chefname %></td>
+          <td><%= chef.email %>></td>
+          <td class="text-center"><%= link_to "Delete user", chef, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger btn-block' %></td>
+        </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% end %>
+
+
 <h1 class="text-center"><%= render 'shared/title', title: "Chef: " + @chef.chefname %></h1>
 <%= render 'shared/errors', obj: @chef %>
 
@@ -50,3 +75,5 @@
     <%= will_paginate @recipes %>
   </div>
 </div>
+
+
