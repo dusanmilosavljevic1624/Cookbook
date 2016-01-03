@@ -13,5 +13,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+// = require turbolinks
+// = require jquery.mmenu.min.all.js
 //= require_tree .

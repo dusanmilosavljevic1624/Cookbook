@@ -1,4 +1,37 @@
-<nav class="navbar">
+<nav id="my-menu">
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><a href="#">Kuhinje (dok ne napravis)</a>
+      <ul id="cuisine">
+        <% Style.all.each do |style| %>
+        <li><%= link_to style.name, style_path(style) %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Ingredients</a>
+      <ul id="sendvic">
+        <% Ingredient.all.each do |ingredient| %>
+          <li><%= link_to ingredient.name, ingredient_path(ingredient)%></li>
+        <% end %>
+      </ul>
+    </li>
+    <li>
+      <%= link_to 'Recipes', recipes_path %>
+      <ul id="drugo">
+        <% Recipe.all.each do |recipe| %>
+          <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li><a href="chefs.html">Chefs</a></li>
+    <li><a href="createRecipe.html">Create Recipe</a></li>
+  </ul>
+</nav>
+
+<button id="my-button">| | |</button>
+
+<!-- <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <a>
@@ -84,4 +117,4 @@
   </div>
 
 </nav>
-<hr class="hr_style"/>
+<hr class="hr_style"/> -->
