@@ -11,14 +11,14 @@
     <div class="tab-content">
       <div id="signup">
         <h1>Sign Up for Free</h1>
-        <form action="/" method="post">
+        <%= form_for @chef do |f| %>
           <div class="top-row">
             <div class="field-wrap">
               <label id="aloha">
                 First Name
                 <span class="req">*</span>
               </label>
-              <input autocomplete="off" required type="text"/>
+              <%= f.text_field :chefname %>
             </div>
             <div class="field-wrap">
               <label>
@@ -33,24 +33,24 @@
               Email Address
               <span class="req">*</span>
             </label>
-            <input autocomplete="off" required type="email"/>
+            <%= f.email_field :email %>
           </div>
           <div class="field-wrap">
             <label>
               Set A Password
               <span class="req">*</span>
             </label>
-            <input autocomplete="off" required type="password"/>
+            <%= f.password_field :password %><br>
           </div>
           <div class="field-wrap">
             <label>
               Confirm Your Password
               <span class="req">*</span>
             </label>
-            <input autocomplete="off" required type="password"/>
+            <%= f.password_field :password_confirmation %>
           </div>
-          <button class="button button-block" type="submit">Get Started</button>
-        </form>
+          <%= f.submit "Register", class: 'button button-block' %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -59,23 +59,23 @@
     <div class="tab-content">
       <div>
         <h1>Welcome back Chef!</h1>
-        <form action="/" method="post">
+          <%= form_for(:session, url: login_path) do |f| %>
           <div class="field-wrap">
             <label>
-              ChefName
+              Email
               <span class="req">*</span>
             </label>
-            <input autocomplete="off" required type="text"/>
+            <%= f.text_field :email, required: 'required' %>
           </div>
           <div class="field-wrap">
             <label>
               Password
               <span class="req">*</span>
             </label>
-            <input autocomplete="off" required type="password"/>
+            <%= f.password_field :password %>
           </div>
-          <button class="button button-block" type="submit">Get Cooking</button>
-        </form>
+          <%= f.submit "Log In", class: 'button button-block' %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -102,7 +102,7 @@
       <div class="modal-buttons">
         <a href="#" id="register-button">Register</a>
         <a href="#" id="login-button">LOGIN</a>
-        <a href="#">Look at the recipes</a>
+        <%= link_to 'Look at the recipes', recipes_path %>
       </div>
     </div>
   </div>

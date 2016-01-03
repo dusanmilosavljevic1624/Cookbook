@@ -9,7 +9,7 @@
       </ul>
     </li>
     <li>
-      <a href="#">Ingredients</a>
+      <a href="#">Ingredients (dok ne napravis)</a>
       <ul id="sendvic">
         <% Ingredient.all.each do |ingredient| %>
           <li><%= link_to ingredient.name, ingredient_path(ingredient)%></li>
@@ -24,8 +24,10 @@
         <% end %>
       </ul>
     </li>
-    <li><a href="chefs.html">Chefs</a></li>
-    <li><a href="createRecipe.html">Create Recipe</a></li>
+    <li><%= link_to 'Chefs', chefs_path %> </li>
+    <li>
+      <%= link_to 'Create Recipe', new_recipe_path %>
+    </li>
     <% if !logged_in? %>
     <li><%= link_to register_path do %>
           <span class="glyphicon glyphicon-user"></span>
