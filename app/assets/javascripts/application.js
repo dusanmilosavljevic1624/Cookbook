@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require turbolinks
+//= require jquery.mmenu.turbolinks.js
 //= require jquery.mmenu.min.all.js
 //= require jquery.mCustomScrollbar.js
 //= require modernizr.custom.js
