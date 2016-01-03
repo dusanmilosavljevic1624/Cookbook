@@ -18,4 +18,5 @@
 //= require modernizr.custom.js
 //= require classie.js
 //= require kutijeFX.js
+//= require jquery.DEPreLoad.js
 //= require_tree .
