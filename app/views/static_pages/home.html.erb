@@ -1,6 +1,28 @@
 <div id="wrapper">
-  
+
+  <div class="container">
+      <div id="boxgallery" class="boxgallery" data-effect="effect-3">
+        <div class="panel">
+          <%= image_tag('background.jpg') %>
+        </div>
+        <div class="panel">
+          <%= image_tag('background-2.jpg') %>
+        </div>
+        <div class="panel">
+          <%= image_tag('background-3.jpg') %>
+        </div>
+        <div class="panel">
+          <%= image_tag('background-4.jpg') %>
+        </div>
 </div>
+
+<script type="text/javascript">
+  interval = setInterval(callFunc, 4000);
+  function callFunc() {
+    $('.next').trigger('click');
+  }
+  new BoxesFx(document.getElementById('boxgallery'));
+</script>
 
 <% if !logged_in? %>
 

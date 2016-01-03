@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
-//= require jquery_ujs
-// = require turbolinks
-// = require jquery.mmenu.min.all.js
+//= require turbolinks
+//= require jquery.mmenu.min.all.js
+//= require jquery.mCustomScrollbar.js
+//= require modernizr.custom.js
+//= require classie.js
+//= require kutijeFX.js
 //= require_tree .
