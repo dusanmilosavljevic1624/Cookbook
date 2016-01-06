@@ -1,3 +1,30 @@
+<%= render 'shared/title', title: @recipe.name %>
+
+  <div class="container">
+    <div class="single-page-content">
+      <div class="single-header cf">
+        <div class="single-info">
+          <h2>Ingredients</h2>
+          <ul>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <li>
+                <%= link_to ingredient.name, ingredient_path(ingredient) %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+        <div class="single-image">
+          <%= image_tag(@recipe.picture.url) if @recipe.picture? %>
+        </div>
+      </div>
+      <div class="single-desc">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus vero dolore est. Totam ipsa expedita nam, quos consequuntur, ut nihil impedit sint modi laudantium aliquam numquam. Maxime ullam dignissimos reprehenderit? Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Exercitationem eaque, enim doloribus totam non illo tenetur, laboriosam recusandae voluptatibus error sint libero, culpa sapiente veritatis, neque eius cum dignissimos cupiditate.
+      </div>
+    </div>
+  </div>
+
+  <!--
 <h1 class="text-center"><%= render 'shared/title', title: @recipe.name %></h1>
 
 <div class="row">
@@ -72,9 +99,4 @@
     </div>
   </div>
 
-</div>
-
-
-
-
-
+</div> -->

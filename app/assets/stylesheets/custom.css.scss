@@ -602,3 +602,49 @@ body {
     width: 100%;
   }
 }
+
+//  ////////////////////////////////////////////////////////////////////////////
+//  Single recipe/chef pages
+//  ////////////////////////////////////////////////////////////////////////////
+.single-page-content{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.single-header{
+  & > div{
+    width: 50%;
+    height: 400px;
+  }
+  .single-image{
+    float: left;
+    img{
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+    }
+  }
+  .single-info{
+    float:right;
+    color: #ffffff;
+    text-align: center;
+    h2{
+      font-size: 36px;
+      padding: 10px 0 30px 0;
+    }
+    li{
+      padding: 10px 0;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+    }
+  }
+}
+
+.profile-image{
+  width: 50%;
+  height: 400px;
+
+}
