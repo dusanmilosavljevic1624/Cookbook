@@ -1,4 +1,12 @@
-<div class="row" style="padding-bottom: 30px;">
+<div class="brick">
+  <%= image_tag(recipe.picture.url) if recipe.picture? %>
+  <div class="info">
+    <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
+    <h5><%= recipe.summary %> </h5>
+  </div>
+</div>
+
+<!-- <div class="row" style="padding-bottom: 30px;">
   <div class="col-md-2">
     <section class="chef_info center">
         <%= link_to gravatar_for(recipe.chef, size:100), chef_path(recipe.chef) %>
@@ -50,4 +58,4 @@
 
 </div>
 
-<hr style="margin-top:-10px;"/>
+<hr style="margin-top:-10px;"/> -->

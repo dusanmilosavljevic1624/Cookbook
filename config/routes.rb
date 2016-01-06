@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/register' => 'chefs#new'
 
   get '/login' => 'sessions#new'
-  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
   post '/login' => 'sessions#create'
 
   resources :styles, only: [:new, :create, :show]

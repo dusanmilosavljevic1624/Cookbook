@@ -195,6 +195,7 @@ body {
     margin: 0;
     padding: 0;
     display: block;
+    width: 100%;
   }
 }
 .info {
@@ -534,8 +535,8 @@ body {
   width: 40%;
   margin: 5%;
   padding-bottom: 30px;
-  background-image: url("../../images/bg-grid-top.jpg"),
-                    url("../../images/bg-grid.jpg");
+  background-image: url(bg-grid-top.jpg),
+                    url(bg-grid.jpg);
   background-repeat: no-repeat, repeat-y;
   background-size: 100%;
   color: #313131;
@@ -543,13 +544,13 @@ body {
     position: absolute;
     height: 50px;
     width: 50px;
-    background: url("../../images/pin.png");
+    background: url(pin.png);
     top: 0px;
     left: 50%;
     margin-left: -10px;
     z-index: 1000;
     background-size: 50px;
-    tranform: rotate(180deg);
+    transform: rotate(180deg);
   }
 
 }
@@ -559,7 +560,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 20px;
-  background: url("../../images/bg-grid-bottom.jpg") -1px bottom no-repeat;
+  background: url(bg-grid-bottom.jpg) -1px bottom no-repeat;
   background-size: 100%;
 }
 

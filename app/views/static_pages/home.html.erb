@@ -1,10 +1,144 @@
 <div id="wrapper">
-  
-</div>
 
-<% if !logged_in? %>
+  <div class="overlay"></div>
+  <div class="overlay full" id="cover"></div>
+  <!--Overlay -->
+  <div class="progress">
+    <p>0</p>
+  </div>
 
-<!-- <div class="jumbotron text-center">
+  <div class="form hidden" id="register-form">
+    <div class="tab-content">
+      <div id="signup">
+        <h1>Sign Up for Free</h1>
+        <%= form_for @chef do |f| %>
+          <div class="top-row">
+            <div class="field-wrap">
+              <label id="aloha">
+                First Name
+                <span class="req">*</span>
+              </label>
+              <%= f.text_field :chefname %>
+            </div>
+            <div class="field-wrap">
+              <label>
+                Last Name
+                <span class="req">*</span>
+              </label>
+              <input autocomplete="off" required type="text"/>
+            </div>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Email Address
+              <span class="req">*</span>
+            </label>
+            <%= f.email_field :email %>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Set A Password
+              <span class="req">*</span>
+            </label>
+            <%= f.password_field :password %><br>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Confirm Your Password
+              <span class="req">*</span>
+            </label>
+            <%= f.password_field :password_confirmation %>
+          </div>
+          <%= f.submit "Register", class: 'button button-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form hidden" id="login-form">
+    <div class="tab-content">
+      <div>
+        <h1>Welcome back Chef!</h1>
+          <%= form_for(:session, url: login_path) do |f| %>
+          <div class="field-wrap">
+            <label>
+              Email
+              <span class="req">*</span>
+            </label>
+            <%= f.text_field :email, required: 'required' %>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Password
+              <span class="req">*</span>
+            </label>
+            <%= f.password_field :password %>
+          </div>
+          <%= f.submit "Log In", class: 'button button-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="boxgallery" data-effect="effect-3" id="boxgallery">
+      <div class="panel">
+        <%= image_tag('background.jpg') %>
+      </div>
+      <div class="panel">
+        <%= image_tag('background-2.jpg') %>
+      </div>
+      <div class="panel">
+        <%= image_tag('background-3.jpg') %>
+      </div>
+      <div class="panel">
+        <%= image_tag('background-4.jpg') %>
+      </div>
+    </div>
+    <div class="modal">
+      <h1>Cook Book
+        <span>Checkout the recipes from all over the world.</span>
+      </h1>
+      <div class="modal-buttons">
+        <a href="#" id="register-button">Register</a>
+        <a href="#" id="login-button">LOGIN</a>
+        <%= link_to 'Look at the recipes', recipes_path %>
+      </div>
+    </div>
+  </div>
+  <!--End of container div -->
+
+  <script type="text/javascript">
+
+    $(function () {
+
+      $('#cover').addClass('visible');
+      $('.progress').show();
+
+      var loader = $("body").DEPreLoad({
+        OnStep: function (percent) {
+          $('.progress').css('width', percent + '%');
+          $('.progress > p').text(percent + '%');
+        },
+        OnComplete: function () {
+          setTimeout(function () {
+            $('.progress').hide();
+            $('.overlay').removeClass('visible');
+          }, 1000)
+        }
+      });
+    });
+
+    interval = setInterval(callFunc, 4000);
+    function callFunc() {
+      $('.next').trigger('click');
+    }
+    new BoxesFx(document.getElementById('boxgallery'));
+  </script>
+
+  <% if !logged_in? %>
+
+  <!-- <div class="jumbotron text-center">
   <h1>Welcome to the largest online cook-book</h1>
   <h3>Browse through recipes and create your own</h3>
   <div class="col-md-6 col-md-offset-3">
@@ -40,7 +174,7 @@
 -->
 
 <% else %>
-<!-- <div class="container-fluid" style="background-color: #F1925C; border-radius: 10px;">
+  <!-- <div class="container-fluid" style="background-color: #F1925C; border-radius: 10px;">
   <h1 class="logged_in_h1 text-center">How it Works</h1>
   <h3 class="white text-center" style="margin-top: -15px; padding-bottom: 20px;">As a registered chef, you can do the following.</h3>
 
@@ -93,4 +227,4 @@
 </div>
 </div> -->
 
-<% end %>
+  <% end %>
