@@ -27,6 +27,21 @@ var ready = function() {
     $('.form').find('input[type=text], input[type=password]').val("");
   });
 
+  var wall = new Freewall("#freewall");
+  wall.reset({
+    selector: '.brick',
+    animate: true,
+    cellW: 200,
+    cellH: 'auto',
+    onResize: function() {
+      wall.fitWidth();
+    }
+  });
+
+  wall.container.find('.brick img').load(function() {
+    wall.fitWidth();
+  });
+  
   $('.form').find('input').on('keyup blur focus', function(e) {
     var $this = $(this),label = $this.prev('label');
     if (e.type === 'keyup') {
