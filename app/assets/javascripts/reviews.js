@@ -9,6 +9,8 @@ var ready = function() {
     }
   });
 
+  $('#select2-box').select2();
+  $('#select2-box-cuisine').select2();
   $('#login-button').on('click', function(e) {
     e.preventDefault();
     $('.overlay').addClass('visible');
@@ -41,7 +43,7 @@ var ready = function() {
   wall.container.find('.brick img').load(function() {
     wall.fitWidth();
   });
-  
+
   $('.form').find('input').on('keyup blur focus', function(e) {
     var $this = $(this),label = $this.prev('label');
     if (e.type === 'keyup') {
