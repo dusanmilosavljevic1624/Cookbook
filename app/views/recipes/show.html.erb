@@ -4,22 +4,20 @@
     <div class="single-page-content">
       <div class="single-header cf">
         <div class="single-info">
+          <h2>Summary</h2>
+          <p><%= @recipe.summary %></p>
           <h2>Ingredients</h2>
           <ul>
-            <% @recipe.ingredients.each do |ingredient| %>
-              <li>
-                <%= link_to ingredient.name, ingredient_path(ingredient) %>
-              </li>
-              <% end %>
+              <%= render @recipe.ingredients %>
           </ul>
+          <%= link_to 'Edit recipe', edit_recipe_path(@recipe), class: 'button' %>
         </div>
         <div class="single-image">
           <%= image_tag(@recipe.picture.url) if @recipe.picture? %>
         </div>
       </div>
       <div class="single-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus vero dolore est. Totam ipsa expedita nam, quos consequuntur, ut nihil impedit sint modi laudantium aliquam numquam. Maxime ullam dignissimos reprehenderit? Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit. Exercitationem eaque, enim doloribus totam non illo tenetur, laboriosam recusandae voluptatibus error sint libero, culpa sapiente veritatis, neque eius cum dignissimos cupiditate.
+        <%= simple_format(@recipe.description) %>
       </div>
     </div>
   </div>
