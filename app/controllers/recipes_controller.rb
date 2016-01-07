@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @recipes = Recipe.paginate(page: params[:page], per_page: 4)
+    @recipes = Recipe.all
   end
 
   def show

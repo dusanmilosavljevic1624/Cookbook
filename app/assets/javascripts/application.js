@@ -20,4 +20,5 @@
 //= require kutijeFX.js
 //= require freewall.js
 //= require jquery.DEPreLoad.js
+//= require select2.min.js
 //= require_tree .

@@ -1,4 +1,59 @@
-<%= render 'shared/errors', obj: @recipe %>
+<div class="paper-content">
+  <%= form_for @recipe, :html => {multipart: true, class: 'recipe-form'} do |f| %>
+    <div id="new-recipe-form">
+      <h2 class="written-header">Recipe Info</h2>
+      <p>
+        <span class="label">Recipe Name *</span>
+        <span>
+          <!-- <input name="your-name" size="40" class="full-width-input" type="text"> -->
+          <%= f.text_field :name, class: "full-width-input" %>
+            <br>
+        </span>
+      </p>
+      <p>
+        <span class="label">Short Description*</span>
+        <span>
+          <!-- <textarea name="your-message" cols="40" rows="10"></textarea> -->
+          <%= f.text_area :summary %>
+            <br>
+        </span>
+      </p>
+      <p>
+        <span class="label">Full Description*</span>
+        <span>
+          <!-- <textarea class="full" name="your-message" cols="40" rows="10"></textarea> -->
+          <%= f.text_area :description, rows: 10, id:'recipe-description' %>
+            <br>
+        </span>
+      </p>
+      <p>
+        <span class="label">Recipe Image *</span>
+        <span>
+          <!-- <input name="your-name" size="40" class="full-width-input" type="text"> -->
+          <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+            <br>
+        </span>
+      </p>
+      <%= f.submit(@recipe.new_record? ? "Create Recipe" : "Edit Recipe", class: "recipe-button") %>
+    </div>
+
+
+    <div id="new-recipe-images">
+      <h2 class="written-header">Recipe Ingredients</h2>
+        <%= f.select :ingredient_ids, Ingredient.all.map{ |i| [i.name, i.id]}, {},{id: 'select2-box', multiple: true} %>
+
+      <h2 class="written-header second-header">Recipe cuisines</h2>
+        <%= f.select :style_ids, Style.all.map{|i| [i.name, i.id]}, {}, {id: 'select2-box-cuisine', multiple: true} %>
+
+    </div>
+
+    <% end %>
+      <!--Obsolete clear had to be used because of current before:after-->
+      <div class="obsolete-clear"></div>
+</div>
+<!--End of paper content-->
+
+<!-- <%= render 'shared/errors', obj: @recipe %>
 
 <div class="row">
   <div class="well col-md-8 col-md-offset-2">
@@ -41,4 +96,4 @@
       }
   });
 
-  </script>
+  </script> -->
