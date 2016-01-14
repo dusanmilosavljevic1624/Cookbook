@@ -612,9 +612,16 @@ body {
 }
 
 .single-header{
+<<<<<<< HEAD
   color: #000;
   & > div{
     width: 50%;
+=======
+  color: #ffffff;
+  & > div{
+    width: 50%;
+    height: 400px;
+>>>>>>> b22d7cd44c943a7c1c5965502419d613d8f8ea57
   }
   .single-image{
     float: left;
@@ -670,6 +677,7 @@ body {
 }
 
 .single-desc{
+<<<<<<< HEAD
   color: #000;
   line-height: 1.5em;
   font-size: 22px;
@@ -709,5 +717,21 @@ body {
     height: 40px;
     z-index: 2000;
     background-size: 43px;
+=======
+  color: white;
+  line-height: 1.5em;
+  font-size: 22px;
+}
+
+.button{
+  padding: 10px;
+  border: 3px solid white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all .5s ease;
+  color: #ffffff;
+  &:hover{
+    background: #ffffff;
+>>>>>>> b22d7cd44c943a7c1c5965502419d613d8f8ea57
   }
 }
