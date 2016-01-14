@@ -1,21 +1,31 @@
 <%= render 'shared/title', title: @recipe.name %>
 
   <div class="container">
-    <div class="single-page-content">
+    <div class="paper-content">
       <div class="single-header cf">
         <div class="single-info">
           <h2>Summary</h2>
-          <p><%= @recipe.summary %></p>
+          <p>
+            <%= @recipe.summary %>
+          </p>
           <h2>Ingredients</h2>
           <ul>
-              <%= render @recipe.ingredients %>
+            <%= render @recipe.ingredients %>
           </ul>
-          <%= link_to 'Edit recipe', edit_recipe_path(@recipe), class: 'button' %>
+          <div class="actions">
+            <%= link_to 'Edit recipe', edit_recipe_path(@recipe), class: 'action-button' %>
+            <% if logged_in? && @current_user.admin? %>
+              <%= link_to "Delete Recipe", @recipe, method: :delete, data: {confirm: "Are you sure?"}, class: 'action-button' %>
+            <% end %>
+          </div>
         </div>
-        <div class="single-image">
+        <div class="polaroid">
+          <div class="pin">.</div>
+          <p><%= @recipe.name %> </p>
           <%= image_tag(@recipe.picture.url) if @recipe.picture? %>
         </div>
       </div>
+
       <div class="single-desc">
         <%= simple_format(@recipe.description) %>
       </div>

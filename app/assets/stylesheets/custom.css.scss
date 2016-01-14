@@ -612,10 +612,9 @@ body {
 }
 
 .single-header{
-  color: #ffffff;
+  color: #000;
   & > div{
     width: 50%;
-    height: 400px;
   }
   .single-image{
     float: left;
@@ -636,13 +635,31 @@ body {
       padding: 20px 0;
       text-align: center;
     }
+    .actions{
+      width: 100%;
+      clear: both;
+    }
     li{
       padding: 10px 0;
+      width: 33%;
+      float: left;
+      text-align: center;
     }
     a{
-      color: white;
+      color: #000;
       text-decoration: none;
       font-size: 22px;
+    }
+    .action-button{
+      font-size: 14px;
+      padding: 10px;
+      font-weight: bold;
+      border: 2px solid #000;
+      transition: all .75s ease;
+      &:hover{
+        color: #fff;
+        background: #CF6502;
+      }
     }
   }
 }
@@ -653,19 +670,44 @@ body {
 }
 
 .single-desc{
-  color: white;
+  color: #000;
   line-height: 1.5em;
   font-size: 22px;
+  margin-top: 50px;
+  padding: 0 50px;
 }
 
-.button{
-  padding: 10px;
-  border: 3px solid white;
-  text-decoration: none;
-  font-size: 24px;
-  transition: all .5s ease;
-  color: #ffffff;
-  &:hover{
-    background: #ffffff;
+.polaroid{
+  position: relative;
+  text-align: center;
+  width: 320px;
+  padding-top: 10px;
+  img{
+    border: 10px solid #fff;
+    border-top: 20px solid #fff;
+    border-bottom: 45px solid #fff;
+    max-height: 400px;
+    width: 80%;
+    -webkit-box-shadow: 3px 3px 3px #777;
+       -moz-box-shadow: 3px 3px 3px #777;
+            box-shadow: 3px 3px 3px #777;
+  }
+  p{
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #888;
+  }
+  .pin{
+    background: url(pin.png);
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 2000;
+    background-size: 43px;
   }
 }
